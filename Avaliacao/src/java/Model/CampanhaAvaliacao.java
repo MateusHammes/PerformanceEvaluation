@@ -1,24 +1,29 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Temporal;
 
 @Entity
-public class CampanhaAvaliacao {
-        @SequenceGenerator(name = "genCampanhaAvaliacao", sequenceName = "seqCampanhaAvaliacao", allocationSize = 1)
+public class CampanhaAvaliacao implements Serializable {
+
+    @SequenceGenerator(name = "genCampanhaAvaliacao", sequenceName = "seqCampanhaAvaliacao", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "genCampanhaAvaliacao")
-    @Id 
+    @Id
     private int id;
     private String nome;
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataInicio;
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataTermino;
     private char status;
-    
-    public CampanhaAvaliacao(){
+
+    public CampanhaAvaliacao() {
     }
 
     public int getId() {
@@ -60,7 +65,5 @@ public class CampanhaAvaliacao {
     public void setStatus(char status) {
         this.status = status;
     }
-    
-    
-    
+
 }
