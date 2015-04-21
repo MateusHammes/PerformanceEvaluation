@@ -1,25 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
-/**
- *
- * @author Mateus
- */
+@Entity
 public class CampanhaAvaliacao {
+        @SequenceGenerator(name = "genCampanhaAvaliacao", sequenceName = "seqCampanhaAvaliacao", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "genCampanhaAvaliacao")
     @Id 
     private int id;
     private String nome;
     private Date dataInicio;
     private Date dataTermino;
     private char status;
-    //private 
     
     public CampanhaAvaliacao(){
     }
