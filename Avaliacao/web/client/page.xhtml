@@ -2,13 +2,187 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <script src="./js/cadastro.js" type="text/javascript"></script>
     <body>
         <ui:composition template="../modelos/masterpage.xhtml">
+            <ui:define name="top">Cadastro de Pessoas</ui:define>
             <ui:define name="content">
-               Aki está tudo oke
-               shuashuashaushuahusa
-               sahushaush
-               
+                <style>
+                    .campo{
+                        width: 45%;
+                        padding: 10px;
+                        float: left;
+                        height: 40px;
+                    }
+                    .lbl{
+                        width: 30%;
+                        display: inline-block;
+                        text-align: right;
+                        padding-right: 15px;
+                    }
+                    .field{
+                        width: 60%;
+                        height: 25px;
+                        padding-left: 5px;
+                    }
+                    fieldset{
+                        border: 0;
+                    }
+                    select.field{
+                        height: 31px;
+                        width: 62%;
+                    }
+                    hr{
+                        width: 100%;
+                    }
+                    .btn{
+                        min-width: 100px;
+                        font-size: 18px;
+                        font-weight: 600;
+                        height: 40px;
+                        border: 0;
+                        border-radius: 3px;
+                        box-shadow: 1px 1px 3px 1px #989696;
+                        margin-left: 5px;
+                    }
+                    .btn.salvar{
+                        background: #00b81b;
+                        color: white;
+                    }
+                    .img1{
+                        width: 100%;
+                        margin: 0px 0px 10px 0px;
+                        height: 230px;
+                    }
+                    .img1 img{
+                        width: 200px;
+                        height: 200px;
+                        border-radius: 4px;
+                        border: 1px solid #ccc;
+                        cursor: pointer;
+                        box-shadow: 5px 5px 15px 2px #ccc;
+                        border-radius: 130px;
+                    }
+                    .img2{
+                        float: left;
+                        width: 50%;
+                        text-align: center;
+                    }
+                    .bottom{
+                    }
+                </style>
+                <div class="box">
+                    <fieldset>
+                        <h2>Dados da Pessoa</h2>
+                        <div class="img1">
+                            <div class="img2">
+                                <img src="../resources/imagens/user_defaul.jpg" title="Foto de Perfil"/> 
+                                <input type="file" style="display: none;" id="input1"/>
+                            </div>
+                            <div class="img2">
+                                <img src="../resources/imagens/user_defaul.jpg" title="Foto De Capa"/> 
+                                <input type="file" style="display: none;" id="input2"/>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="campo">
+                            <label class="lbl">Tipo de Pessoa:</label>
+                            <select class="field">
+                                <option>Pessoa Física</option>
+                                <option>Pessoa Jurídica</option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <label class="lbl">Nome/Raz. Social:</label>
+                            <input class="field" type="text" placeholder="Nome"/>
+                        </div>
+                        <div class="campo">
+                            <label class="lbl">Apelido:</label>
+                            <input class="field" type="text" placeholder="Apelido"/>
+                        </div>
+                        <div class="campo">
+                            <label class="lbl">CPF/CNPJ:</label>
+                            <input class="field" type="text" placeholder="CPF/CNPJ"/>
+                        </div>
+                        <div class="campo">
+                            <label class="lbl">Gênero:</label>
+                            <select class="field">
+                                <option>Indefinido</option>
+                                <option>Masculino</option>
+                                <option>Feminino</option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <label class="lbl">Nasc/Funda:</label>
+                            <input class="field" type="date"/>
+                        </div>
+                        <div class="campo">
+                            <label class="lbl">E-mail:</label>
+                            <input class="field" type="email" placeholder="E-mail"/>
+                        </div>
+                        <div class="campo">
+                            <label class="lbl">Telefone:</label>
+                            <input class="field" type="tel" placeholder="Telefone"/>
+                        </div>
+                        <hr/>
+                        <h2>Endereço</h2>
+                        <div class="campo">
+                            <label class="lbl">Cidade:</label>
+                            <input class="field" type="text" placeholder="Cidade"/>
+                        </div>
+                        <div class="campo">
+                            <label class="lbl">País:</label>
+                            <input class="field" type="text" placeholder="País"/>
+                        </div>
+                        <div class="campo">
+                            <label class="lbl">Estado:</label>
+                            <input class="field" type="text" placeholder="Estado"/>
+                        </div>
+                        <div class="campo">
+                            <label class="lbl">Número:</label>
+                            <input class="field" type="text" placeholder="Número"/>
+                        </div>
+                        <div class="campo">
+                            <label class="lbl">Bairo:</label>
+                            <input class="field" type="text" placeholder="Bairo"/>
+                        </div>
+                        <div class="campo">
+                            <label class="lbl">Descrição:</label>
+                            <input class="field" type="text" placeholder="Descrição"/>
+                        </div>
+                        <hr/>
+                        <h2>Contatos</h2>
+                        <div class="campo">
+                            <label class="lbl">Facebook:</label>
+                            <input class="field" type="text" placeholder="Facebook"/>
+                        </div>
+                        <div class="campo">
+                            <label class="lbl">Google:</label>
+                            <input class="field" type="text" placeholder="Google"/>
+                        </div>
+                        <div class="campo">
+                            <label class="lbl">Twitter:</label>
+                            <input class="field" type="text" placeholder="Twitter"/>
+                        </div>
+                        <div class="campo">
+                            <label class="lbl">Celular: </label>
+                            <input class="field" type="tel" placeholder="Celular"/>
+                        </div>
+                        <div class="campo">
+                            <label class="lbl">Telefone Resid: </label>
+                            <input class="field" type="tel" placeholder="Telefone Residencial"/>
+                        </div>
+                        <div class="campo">
+                            <label class="lbl">E-mail Profis: </label>
+                            <input class="field" type="email" placeholder="E-mail Profissional"/>
+                        </div>
+                        <hr/>
+                        <div class="bottom">
+                            <input class="btn salvar" type="submit" value="Salvar" />
+                            <input class="btn" type="button" value="Cancelar" />
+                        </div>
+                    </fieldset>
+                </div>
             </ui:define>
         </ui:composition>
     </body>

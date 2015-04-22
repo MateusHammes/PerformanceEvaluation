@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <body>
+        <ui:composition template="../modelos/masterpage.xhtml">
+            <ui:define name="top">Página Inicial</ui:define>
+            <ui:define name="content">
+                <style>
+                    .grafic{
+                        width: 100%;
+                        padding: 10px;
+                    }
+                    .bordergrafic{
+                        height: 20px;
+                        text-align: left;
+                        border: 1px solid #747474;
+                        border-radius: 2px;
+                        margin: 10px;
+                    }
+                    .tamanho{
+                        height: 100%;
+                    }
+                    .bordergrafic span{
+                        text-align: center;
+                        position: absolute;
+                        margin: -18px 0px 0px 33%;
+                    }
+                    .icon{
+                        background-image: url("icon_home.png");
+                    }
+                </style>
+                <div class="box">
+                    <div class="grafic">
+                        <label>Vendas</label>
+                        <div class="bordergrafic">
+                            <div class="tamanho" style="width: 50%;  background: #00BA1F;"></div>
+                            <span>50%</span>
+                        </div>
+                    </div>
+                    <div class="grafic">
+                        <label>Prejuízos</label>
+                        <div class="bordergrafic">
+                            <div class="tamanho" style="width: 30%;  background: #F00505;"></div>
+                            <span>30%</span>
+                        </div>
+                    </div>
+                    <div class="grafic">
+                        <label>Lucros</label>
+                        <div class="bordergrafic">
+                            <div class="tamanho" style="width: 70%;  background: #4802F4;"></div>
+                            <span>70%</span>
+                        </div>
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>
