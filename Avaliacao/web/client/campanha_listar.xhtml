@@ -1,54 +1,57 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <h:head>
-        <title>Facelet Title</title>
-    </h:head>
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:body>
-        <f:view>
-            <h:form>
-                <h1><h:outputText value="List"/></h1>
-                <h:dataTable value="#{campanhaBean.campanhas}" var="item">
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Id"/>
-                        </f:facet>
-                        <h:outputText value="#{item.id}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Nome"/>
-                        </f:facet>
-                        <h:outputText value="#{item.nome}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="DataInicio"/>
-                        </f:facet>
-                        <h:outputText value="#{item.dataInicio}">
-                            <f:convertDateTime pattern="MM/dd/yyyy" />
-                        </h:outputText>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="DataTermino"/>
-                        </f:facet>
-                        <h:outputText value="#{item.dataTermino}">
-                            <f:convertDateTime pattern="MM/dd/yyyy" />
-                        </h:outputText>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Status"/>
-                        </f:facet>
-                        <h:outputText value="#{item.status}"/>
-                    </h:column>
-                </h:dataTable>
-            </h:form>
-        </f:view>
-
+        <ui:composition template="../modelos/masterpage.xhtml">
+            <ui:define name="top">Listagem de Campanhas</ui:define>
+            <ui:define name="content">
+                <div class="box">
+                    <f:view>
+                        <h:form>
+                            <h1><h:outputText value="List"/></h1>
+                            <h:dataTable value="#{campanhaBean.campanhas}" var="item">
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Id"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.id}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Nome"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.nome}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="DataInicio"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.dataInicio}">
+                                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                                    </h:outputText>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="DataTermino"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.dataTermino}">
+                                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                                    </h:outputText>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Status"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.status}"/>
+                                </h:column>
+                            </h:dataTable>
+                        </h:form>
+                    </f:view>
+                </div>
+            </ui:define>
+        </ui:composition>
     </h:body>
 </html>
-
