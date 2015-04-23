@@ -31,7 +31,9 @@ public class CampanhaBean {
     private DataModel campanhas;
 
     public DataModel getCampanhas() {
-        campanhas = new ListDataModel(campanhaDao.findAll());
+        if (campanhas == null) {
+            campanhas = new ListDataModel(campanhaDao.findAll());
+        }
         return campanhas;
     }
 
