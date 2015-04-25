@@ -5,6 +5,7 @@
  */
 package Model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,6 +15,7 @@ import javax.persistence.SequenceGenerator;
  *
  * @author Mateus
  */
+@Entity
 public class Pessoa {
 
     @Id
@@ -23,6 +25,7 @@ public class Pessoa {
     private String nome;
     private int idade;
 
+    
     public Pessoa() {
     }
 
