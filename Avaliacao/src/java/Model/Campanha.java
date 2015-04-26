@@ -10,7 +10,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Temporal;
 
 @Entity
-public class CampanhaAvaliacao implements Serializable {
+public class Campanha implements Serializable {
 
     @SequenceGenerator(name = "genCampanhaAvaliacao", sequenceName = "seqCampanhaAvaliacao", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "genCampanhaAvaliacao")
@@ -23,7 +23,7 @@ public class CampanhaAvaliacao implements Serializable {
     private Date dataTermino;
     private char status;
 
-    public CampanhaAvaliacao() {
+    public Campanha() {
     }
 
     public int getId() {
