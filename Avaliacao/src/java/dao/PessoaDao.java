@@ -5,7 +5,7 @@
  */
 package dao;
 
-import Model.Campanha;
+import Model.Pessoa;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -16,38 +16,38 @@ import util.HibernateUtil;
  *
  * @author Mateus
  */
-public class CampanhaDao {
+public class PessoaDao {
 
     private Session session;
 
-    public CampanhaDao() {
+    public PessoaDao() {
         session = HibernateUtil.getSessionFactory().openSession();
     }
 
-    public void insert(Campanha campanha) {
+    public void insert(Pessoa pessoa) {
         Transaction t = session.beginTransaction();
-        session.save(campanha);
+        session.save(pessoa);
         t.commit();
     }
 
-    public void update(Campanha campanha) {
+    public void update(Pessoa pessoa) {
         Transaction t = session.beginTransaction();
-        session.merge(campanha);
+        session.merge(pessoa);
         t.commit();
     }
 
-    public void delete(Campanha campanha) {
+    public void delete(Pessoa pessoa) {
         Transaction t = session.beginTransaction();
-        session.delete(campanha);
+        session.delete(pessoa);
         t.commit();
     }
 
-    public Campanha findById(int id) {
-        return (Campanha) session.load(Campanha.class, id);
+    public Pessoa findById(int id) {
+        return (Pessoa) session.load(Pessoa.class, id);
     }
 
-    public List<Campanha> findAll() {
-        Query query = session.createQuery("from CampanhaAvaliacao");
+    public List<Pessoa> findAll() {
+        Query query = session.createQuery("from Pessoa");
         return query.list();
     }
 }

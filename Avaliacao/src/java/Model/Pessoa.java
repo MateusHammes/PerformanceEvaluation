@@ -5,10 +5,12 @@
  */
 package Model;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 
 /**
@@ -16,7 +18,7 @@ import javax.persistence.SequenceGenerator;
  * @author Mateus
  */
 @Entity
-public class Pessoa {
+public class Pessoa implements Serializable {
 
     @Id
     @SequenceGenerator(name = "genPessoa", sequenceName = "seqPessoa", allocationSize = 1)
@@ -24,13 +26,22 @@ public class Pessoa {
     private int id;
     private String nome;
     private int idade;
+    @ManyToOne
+    private Cargo cargo;
 
-    
     public Pessoa() {
     }
 
     public int getId() {
         return id;
+    }
+
+    public Cargo getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(Cargo cargo) {
+        this.cargo = cargo;
     }
 
     public void setId(int id) {

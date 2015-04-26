@@ -5,7 +5,7 @@
  */
 package mbeans;
 
-import Model.CampanhaAvaliacao;
+import Model.Campanha;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
@@ -23,7 +23,7 @@ public class Avaliacoes {
     public Avaliacoes() {
     }
     
-    private CampanhaAvaliacao campanha = new CampanhaAvaliacao();
+    private Campanha campanha = new Campanha();
     
     
 }

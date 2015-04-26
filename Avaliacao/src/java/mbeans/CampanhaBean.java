@@ -5,7 +5,7 @@
  */
 package mbeans;
 
-import Model.CampanhaAvaliacao;
+import Model.Campanha;
 import dao.CampanhaDao;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -27,7 +27,7 @@ public class CampanhaBean {
     }
 
     private CampanhaDao campanhaDao = new CampanhaDao();
-    private CampanhaAvaliacao campanha = new CampanhaAvaliacao();
+    private Campanha campanha = new Campanha();
     private DataModel campanhas;
 
     public DataModel getCampanhas() {
@@ -41,11 +41,11 @@ public class CampanhaBean {
         this.campanhas = campanhas;
     }
 
-    public CampanhaAvaliacao getCampanha() {
+    public Campanha getCampanha() {
         return campanha;
     }
 
-    public void setCampanha(CampanhaAvaliacao campanha) {
+    public void setCampanha(Campanha campanha) {
         this.campanha = campanha;
     }
 
@@ -55,7 +55,7 @@ public class CampanhaBean {
     }
 
     public String select() {
-        campanha = (CampanhaAvaliacao) campanhas.getRowData();
+        campanha = (Campanha) campanhas.getRowData();
         return "campanha_form";
     }
 
