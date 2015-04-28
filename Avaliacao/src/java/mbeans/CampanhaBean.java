@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mbeans;
 
 import Model.Campanha;
@@ -12,17 +7,9 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 
-/**
- *
- * @author Mateus
- */
 @ManagedBean
 @RequestScoped
 public class CampanhaBean {
-
-    /**
-     * Creates a new instance of Campanha
-     */
     public CampanhaBean() {
     }
 
@@ -63,5 +50,4 @@ public class CampanhaBean {
         campanhaDao.update(campanha);
         return "campanha_listar";
     }
-
 }

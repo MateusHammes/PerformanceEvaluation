@@ -10,6 +10,13 @@
         <h:outputStylesheet name="./css/cssLayout.css"/>
         <h:outputStylesheet name="./css/cssLayout.css"/>
         <title>Title</title>
+        <script>
+            $(function () {
+//                $(document).ready({
+                $('head title').html($('[name=top]').html());
+                //});
+            });
+        </script>
     </h:head>
 
     <h:body>
@@ -21,10 +28,10 @@
                 <ui:insert name="left">
                     <div id="menu"><ul>
                             <li><a href="home.xhtml"><div>PÁGINA INICIAL</div></a></li>
-                            <li><a href="../client/campanha_listar.xhtml"><div>Listagem Campanhas</div></a></li>
+                            <li><a href="campanha_listar.xhtml"><div>Listagem Campanhas</div></a></li>
+                            <li><a href="avaliacao.xhtml"><div>Cadastro de Campanha</div></a></li>
+                            <li><a href="pessoa_form.xhtml"><div>Cadastro de Pessoa</div></a></li>
                             <li><a href="page.xhtml"><div>CADASTRO DE PESSOAS</div></a></li>
-                            <li><a href="campanha.xhtml"><div>CAMPANHA DE AVALIAÇÃO</div></a></li>
-                            <li><a href="avaliacao.xhtml"><div>AVALIAÇÃO</div></a></li>
                         </ul></div>
                 </ui:insert>
             </div>

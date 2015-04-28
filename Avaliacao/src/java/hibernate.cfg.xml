@@ -4,10 +4,16 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
     <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/aulajsf</property>
+    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/avaliacao</property>
     <property name="hibernate.connection.username">postgres</property>
     <property name="hibernate.connection.password">123</property>
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.format_sql">true</property>
+    <mapping class="Model.Campanha"/>
+    <mapping class="Model.Cargo"/>
+    <mapping class="Model.Competencia"/>
+    <mapping class="Model.Pessoa"/>
+    <mapping class="Model.PessoaAvaliacao"/>
+    <mapping class="Model.Questoes"/>
   </session-factory>
 </hibernate-configuration>
